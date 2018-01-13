@@ -26,7 +26,11 @@ while(command):
     if(command.split()[0]=='add'):
         addcookie(command.split()[1],session)
     elif (command.split()[0]=='del'):
-        deletecookie(command.split()[1],session)
+        if len(command.split())<2:
+            print(comandesp)
+            command=raw_input()
+        else:
+            delcookies(command.split()[1], session)
     elif(command=="show"):
         showcookies(session)
     elif(command=="quit"):
